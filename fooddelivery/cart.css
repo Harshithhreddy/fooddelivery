@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+}
+:root{
+    --primarycolor:#0e6253;
+    --secondarycolor:#ffc107;
+    --white:#fff;
+    --black:#000;
+    --softgreen:#d9f2ee;
+    --darkgray:#a7a7a7;
+    --gray:#f5f5f5;
+
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: var(--softgreen);
+}
+.sidebar{
+    width: 250px;
+    height: 100%;
+    background-color: var(--primarycolor);
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+    padding: 2%;
+    color: var(--white);
+}
+
+.sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.sidebar-menu a{
+    padding: 5% 8%;
+    margin: 0.5rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--white);
+    text-decoration: none;
+    gap: 1rem;
+
+}
+.sidebar-menu a ion-icon, .logout a ion-icon{
+    font-size: 20px;
+}
+.sidebar-menu a:hover , .logout a:hover{
+    background-color: var(--secondarycolor);
+    border-radius: 50px;
+}
+.logout a{
+    padding: 5% 8%;
+    margin: 0.5rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--white);
+    text-decoration: none;
+    gap: 1rem;
+    font-weight: 500;
+}
+.toggle-menu{
+    display: none;
+}
+
+.main{
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    background-color: var(--softgreen);
+    /* height: 100vh; */
+    min-height: 100vh;
+    margin-left: 250px;
+    
+}
+
+.mainnav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    /* position: fixed; */
+}
+
+.Secure{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    gap: 0.5rem;
+    padding-right: 80px;
+}
+
+.Secure img{
+    width: 30px;
+}
+
+.Secure h3{
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 8px;
+    padding-right: 10px;
+}
+
+
+.mainnav h4{
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 200px;
+    color: var(--black);
+   
+    
+}
+
+.mainbag{
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+}
+
+.cart{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.move{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    top: 500px;
+}
+.cart .ex{
+    height: 500px;
+    width: 500px;
+}
+
+.cart h3{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.cart h5{
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.cart button{
+    position: absolute;
+    top: 100px;
+    height: 60px;
+    width: 260px;
+    padding: 12px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 300;
+    outline: none;
+    border: 2px solid var(--primarycolor);
+    border-radius: 20px;
+    /* text-decoration: none; */
+}
+
+
+
+.cart button:hover{
+    background-color: var(--secondarycolor);
+    color: var(--white);
+    box-shadow: var(--darkgray);
+}
+
+
+
+@media screen and (max-width:640px) {
+    .sidebar{
+        display: none;
+    }
+    .main{
+        margin-left: 0;
+    }
+
+    .toggle-menu{
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        background-color: var(--white);
+        color: var(--primarycolor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 3;
+    }
+    .sidebar.active{
+        display: flex;
+        z-index: 10;
+    }
+
+    .mainnav h4{
+        display: none;
+    }
+
+    .mainbag{
+        padding-left: 30px;
+    }
+}

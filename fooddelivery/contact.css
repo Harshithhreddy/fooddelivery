@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+}
+:root{
+    --primarycolor:#0e6253;
+    --secondarycolor:#ffc107;
+    --white:#fff;
+    --black:#000;
+    --softgreen:#d9f2ee;
+    --darkgray:#a7a7a7;
+    --gray:#f5f5f5;
+
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: var(--softgreen);
+}
+.sidebar{
+    width: 250px;
+    height: 100%;
+    background-color: var(--primarycolor);
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+    padding: 2%;
+    color: var(--white);
+}
+
+.sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.sidebar-menu a{
+    padding: 5% 8%;
+    margin: 0.5rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--white);
+    text-decoration: none;
+    gap: 1rem;
+
+}
+.sidebar-menu a ion-icon, .logout a ion-icon{
+    font-size: 20px;
+}
+.sidebar-menu a:hover , .logout a:hover{
+    background-color: var(--secondarycolor);
+    border-radius: 50px;
+}
+.logout a{
+    padding: 5% 8%;
+    margin: 0.5rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--white);
+    text-decoration: none;
+    gap: 1rem;
+    font-weight: 500;
+}
+.toggle-menu{
+    display: none;
+}
+
+.log{
+    display: flex;
+    justify-content: space-between;
+}
+.container{
+    background-color: var(--softgreen);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding-left: 400px;
+    /* justify-content: space-around; */
+}
+
+.contact-right{
+    width: 600px;
+    height: 591px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding-top: 110px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 40px;
+    background-color: var(--softgreen);
+}
+
+.contact-title{
+    font-weight: 60px;
+    margin-bottom: 5px;
+    font-size: 25px;
+    color: var(--primarycolor);
+}
+
+.contact-title hr{
+    width: 200px;
+    height: 4px;
+    background-color: var(--primarycolor);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 4px;
+}
+
+.contact-field{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: var(--gray);
+    padding-left: 30px;
+    border-radius: 40px;
+    font-weight: 500;
+}
+
+.contact-right textarea{
+    height: 140px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.contact-field:hover{
+    border: solid 2px var(--primarycolor);
+}
+
+.contact-field::placeholder{
+    color: var(--darkgray);
+}
+
+.contact-right button{
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 10px;
+    border: none;
+    background: linear-gradient(var(--primarycolor),var(--primarycolor));
+    cursor: pointer;
+    border-radius: 40px;
+    color: white;
+}
+
+.contact-right button img{
+    font-size: 15px;
+}
+
+.contact-right .button:hover{
+    background: var(--secondarycolor);
+    border-radius: 40px;
+    color: var(--white);
+}
+.contact-left img{
+    width: 400px;
+    height: 430px;
+    border: solid 2px var(--softgreen);
+    /* mix-blend-mode: color-burn; */
+}
+@media (max-width:820px) {
+    .contact-left{
+        display: none;
+    }
+    .contact-right{
+        /* position: absolute; */
+
+        left: 256px;
+        position: fixed;
+    }
+}
+@media (max-width:640px) {
+    .contact-field{
+        width: 80vw;
+    }
+    .contact-left{
+        display: none;
+    }
+    .contact-right{
+        display: flex;
+        align-items: center;
+        top: 60px;
+        width: 72px;
+        
+        position: absolute;
+        left: 120px;
+        height: fit-content;
+    }
+    
+}
+@media screen and (max-width:640px) {
+    .sidebar{
+        display: none;
+    }
+    .main{
+        margin-left: 0;
+    }
+
+    .toggle-menu{
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        background-color: var(--white);
+        color: var(--primarycolor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 3;
+    }
+    .sidebar.active{
+        display: flex;
+        z-index: 10;
+    }
+}

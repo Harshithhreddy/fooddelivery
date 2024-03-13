@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bag</title>
+    <link rel="stylesheet" href="cart.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans:wght@200&family=Open+Sans:wght@500&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <h1><i>FoodyZone</i></h1>
+        </div>
+        <div class="sidebar-menu">
+            <a href="index.html"><ion-icon name="home-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-circle-outline"></ion-icon>Notifications</a>
+            <a href="contact.html"><ion-icon name="call-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div>
+        <div class="logout">
+            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="mainnav">
+            <ion-icon class="toggle-menu" name="menu-outline"></ion-icon>
+            <h4>Bag----------Address-----------Payments</h4>
+            <div class="Secure">
+                <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" alt="">
+                <h3>100% Secure </h3>
+            </div>
+        </div>
+
+        <div class="mainbag">
+            <div class="cart">
+                <img class="ex" src="empty.png" alt="">
+               <div class="move">
+
+                <h3>Hey,It feels so light!</h3>
+                <h5>There is nothing in the bag.Lets add some items</h5>
+                <button id="additems">ADD ITEMS
+                     
+                </button>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script>
+        let additems=document.getElementById("additems");
+
+        additems.onclick=function(){
+            window.location.href="index.html";
+        }
+
+        const mobile = document.querySelector('.toggle-menu');
+        const mobileLink = document.querySelector('.sidebar');
+        mobile.addEventListener("click", function () {
+            mobile.classList.toggle("is-active");
+            mobileLink.classList.toggle("active");
+        });
+
+        mobileLink.addEventListener("click", function () {
+            const menubars = document.querySelector(".is-active");
+            if (window.innerWidth <= 768 && menubars) {
+                mobile.classList.toggle("is-active");
+                mobileLink.classList.toggle("active");
+            }
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
